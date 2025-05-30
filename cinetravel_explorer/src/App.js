@@ -114,8 +114,24 @@ function DestinationModal({ destination, onClose }) {
   // Trip planner external link
   const tripPlannerUrl = "https://www.tripit.com";
 
+  // PUBLIC_INTERFACE
+  // Handles clicking the overlay (outside modal content)
+  function handleOverlayClick(e) {
+    if (e.target === e.currentTarget) {
+      // Overlay itself, close modal and reset homepage view
+      onClose();
+    }
+  }
+
   return (
-    <div className="ct-modal-overlay" tabIndex={-1} role="dialog" aria-modal="true">
+    <div
+      className="ct-modal-overlay"
+      tabIndex={-1}
+      role="dialog"
+      aria-modal="true"
+      onClick={handleOverlayClick}
+      data-testid="ct-modal-overlay"
+    >
       <div className="ct-modal">
         <button className="ct-modal-close" onClick={onClose} aria-label="Close">&times;</button>
         <img src={destination.image} alt={destination.title} className="ct-modal-img"/>
