@@ -117,3 +117,470 @@ body {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* =============== CineTravel Explorer Styles =============== */
+
+/* Main App Container */
+.ct-app {
+  font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background: var(--ct-light-bg);
+  min-height: 100vh;
+  color: var(--ct-text-dark);
+  padding-top: 68px;
+}
+
+/* Navbar tweaks */
+.ct-navbar {
+  background: var(--ct-primary);
+  box-shadow: 0 2px 8px 0 var(--ct-shadow);
+  border-bottom: 0;
+}
+
+.ct-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ct-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.09);
+}
+
+.ct-logo-symbol {
+  color: var(--ct-secondary);
+  font-size: 1.5em;
+}
+
+.ct-menu-btn {
+  margin-left: 8px;
+  background: var(--ct-accent);
+  border-radius: 100px;
+  font-size: 1rem;
+  box-shadow: 0 1px 3px 0 var(--ct-shadow);
+}
+
+/* Hero Section */
+.ct-hero {
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: 56px;
+  padding-bottom: 36px;
+  box-shadow: 0 4px 20px 0 var(--ct-shadow);
+  z-index: 2;
+}
+
+.ct-hero-content {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ct-hero-headline {
+  color: #fff;
+  text-shadow: 0 3px 16px rgba(26,26,46,0.25);
+  margin-bottom: 12px;
+}
+
+.ct-title-film {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 11px;
+}
+
+.ct-film-shine {
+  background: linear-gradient(92deg,#fff 54%, var(--ct-secondary) 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.ct-accent {
+  color: var(--ct-secondary);
+  font-weight: 700;
+  text-shadow: 0 1px 12px var(--ct-secondary);
+}
+
+.ct-secondary {
+  color: var(--ct-accent);
+}
+
+.ct-hero-desc {
+  color: rgba(255,255,255,0.90);
+  font-size: 1.24rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+/* Search Bar */
+.ct-search-bar {
+  position: relative;
+  margin: 0 auto;
+  max-width: 480px;
+  display: flex;
+  box-shadow: 0 2px 8px 0 var(--ct-shadow);
+  border-radius: 100px;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid var(--ct-accent);
+  z-index: 99;
+}
+
+.ct-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.13rem;
+  padding: 15px 20px;
+  border-radius: 100px 0 0 100px;
+  background: #fff;
+  color: var(--ct-text-dark);
+}
+
+.ct-search-btn {
+  padding: 0 28px;
+  background: var(--ct-secondary);
+  color: #fff;
+  box-shadow: none;
+  border-radius: 0 100px 100px 0;
+  font-size: 1.08rem;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.ct-search-btn:hover {
+  background: #f15769;
+}
+
+/* Sections */
+.ct-section {
+  margin: 44px auto 0 auto;
+  max-width: 1040px;
+  width: 96vw;
+  padding: 0;
+}
+
+.ct-section-title {
+  color: var(--ct-accent);
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.ct-featured-section {
+  padding-top: 28px;
+}
+
+/* Destination Grid */
+.ct-destination-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 29px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 28px;
+}
+
+.ct-grid-empty {
+  text-align: center;
+  color: var(--ct-accent);
+  font-size: 1.1rem;
+}
+
+/* Destination Card */
+.ct-destination-card {
+  background: var(--ct-card-bg);
+  border-radius: 16px;
+  box-shadow: 0 3px 16px 0 var(--ct-shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ct-destination-card:hover {
+  transform: translateY(-5px) scale(1.0205);
+  box-shadow: 0 8px 20px 0 var(--ct-accent);
+}
+
+.ct-card-img-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.ct-card-img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  display: block;
+}
+
+.ct-card-movie {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: var(--ct-secondary);
+  color: #fff;
+  font-size: 0.97rem;
+  padding: 3px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 3px 8px 0 var(--ct-shadow);
+}
+
+.ct-card-content {
+  padding: 18px 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ct-card-title {
+  margin: 0 0 4px 0;
+  font-size: 1.26rem;
+  color: var(--ct-accent);
+  font-weight: 600;
+}
+
+.ct-card-scene {
+  color: var(--ct-primary);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Modal overlay and content */
+.ct-modal-overlay {
+  position: fixed;
+  top: 0;left: 0;right: 0;bottom: 0;
+  z-index: 10008;
+  background: rgba(20,24,34,0.56);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeinModal 0.19s;
+}
+
+@keyframes fadeinModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ct-modal {
+  background: var(--ct-modal-bg);
+  border-radius: 22px;
+  max-width: 420px;
+  width: 98vw;
+  box-shadow: 0 5px 24px 6px rgba(26,26,46,0.33);
+  padding: 0 0 21px 0;
+  position: relative;
+  animation: modalPop .24s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.94);}
+  100% { transform: scale(1);}
+}
+
+.ct-modal-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 22px 22px 0 0;
+}
+
+.ct-modal-content {
+  padding: 18px 20px 2px 20px;
+  width: 100%;
+}
+
+.ct-modal-movie {
+  font-size: 1.01rem;
+  color: var(--ct-secondary);
+  margin: 4px 0 6px 0;
+  font-weight: 700;
+}
+
+.ct-modal-scene {
+  color: var(--ct-accent);
+  font-size: 1.06rem;
+  margin-bottom: 8px;
+}
+
+.ct-modal-trivia {
+  color: #292b34;
+  font-size: 0.98rem;
+  margin-bottom: 18px;
+}
+
+.ct-trip-btn {
+  margin: 7px 0 14px 0;
+  background: var(--ct-primary);
+  color: #fff;
+  border-radius: 90px;
+  box-shadow: 0 2px 6px var(--ct-shadow);
+}
+
+.ct-modal-close {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 1.92em;
+  background: transparent;
+  border: 0;
+  color: var(--ct-secondary);
+  cursor: pointer;
+}
+
+/* Reviews/ratings section in modal */
+.ct-modal-reviews {
+  padding: 10px 0 0 0;
+  border-top: 1px solid #dae1eb;
+  margin-top: 12px;
+}
+
+.ct-review-title {
+  font-size: 1.08rem;
+  color: var(--ct-secondary);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.ct-review-stars {
+  color: gold;
+  font-size: 1.1em;
+  margin-left: 3px;
+}
+
+.ct-review-text {
+  font-style: italic;
+  color: #3c3f47;
+  margin-bottom: 6px;
+}
+
+.ct-review-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 3px;
+}
+
+.ct-review-input {
+  flex: 1;
+  border: 1px solid #dbdbdb;
+  border-radius: 16px;
+  padding: 6px 13px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--ct-text-dark);
+}
+
+.ct-review-btn {
+  background: var(--ct-secondary);
+  border-radius: 16px;
+  padding: 7px 14px;
+  font-size: 1rem;
+  min-width: 70px;
+  margin-left: 4px;
+}
+
+/* Map Modal */
+.ct-modal-map {
+  max-width: 540px;
+  min-height: 380px;
+  align-items: center;
+  text-align: center;
+}
+
+.ct-map-img {
+  width: 96%;
+  max-width: 410px;
+  border-radius: 14px;
+  margin: 18px 0;
+  box-shadow: 0 3px 18px 0 var(--ct-shadow);
+}
+
+.ct-map-desc {
+  color: var(--ct-accent);
+  font-size: 1.08rem;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 680px) {
+  .ct-hero-content {max-width: 97vw;}
+  .ct-modal {max-width: 98vw;}
+  .ct-title-film {font-size: 2.13rem;}
+  .ct-section-title {font-size: 1.3rem;}
+}
+
+/* Footer */
+.ct-footer {
+  padding: 23px 0 13px 0;
+  background: var(--ct-primary);
+  color: #fff;
+  margin-top: 65px;
+  text-align: center;
+  font-size: 1.01rem;
+  box-shadow: 0 -2px 12px var(--ct-shadow);
+}
+
+.ct-footer-title {
+  color: var(--ct-secondary);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  margin-right: 9px;
+}
+
+.ct-footer-nav {
+  margin-top: 4px;
+}
+
+.ct-footer-link {
+  color: var(--ct-accent);
+  margin: 0 7px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background .15s;
+  padding: 2px 9px;
+}
+
+.ct-footer-link:hover {
+  background: var(--ct-secondary);
+  color: #fff;
+}
+
+.ct-footer-sep {
+  color: var(--ct-secondary);
+  margin: 0 3px;
+}
+
+/* Utility */
+::-webkit-scrollbar-thumb { background: var(--ct-accent); border-radius: 5px; }
