@@ -105,9 +105,15 @@ function DestinationGrid({ destinations, onSelect }) {
   );
 }
 
-// PUBLIC_INTERFACE
+/** 
+ * PUBLIC_INTERFACE
+ * DestinationModal component for displaying selected destination details,
+ * now includes an external trip planner button.
+ */
 function DestinationModal({ destination, onClose }) {
-  // Simple static placeholders for reviews/ratings/trip planning button/trivia
+  // Trip planner external link
+  const tripPlannerUrl = "https://www.tripit.com";
+
   return (
     <div className="ct-modal-overlay" tabIndex={-1} role="dialog" aria-modal="true">
       <div className="ct-modal">
@@ -120,7 +126,16 @@ function DestinationModal({ destination, onClose }) {
           <div className="ct-modal-trivia">
             <b>Trivia:</b> {destination.trivia}
           </div>
-          <button className="btn btn-large ct-trip-btn" onClick={() => alert("Trip planning coming soon!")}>Plan Your Trip</button>
+          {/* PUBLIC_INTERFACE: Plan Your Trip button opens an external planner */}
+          <a
+            className="btn btn-large ct-trip-btn"
+            href={tripPlannerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-block', textDecoration: 'none' }}
+          >
+            Plan Your Trip
+          </a>
           <div className="ct-modal-reviews">
             <div className="ct-review-title"><b>User Reviews & Ratings</b> <span className="ct-review-stars">★★★★☆</span></div>
             <p className="ct-review-text">“Absolutely magical! Visiting this location brought my favorite film to life.”</p>
